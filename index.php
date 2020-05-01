@@ -11,7 +11,7 @@
 <div class="row">
     <?php
         $db = Db::conectar();
-        $select  = $db -> prepare( 'select * from tblproductos');
+        $select  = $db -> prepare( 'select * from productos');
         $select -> execute();
         $lista = $select -> fetchAll(PDO::FETCH_ASSOC);
     ?>
