@@ -20,12 +20,11 @@
     ?>
     <div class="col-3">
         <div class="card">
-            <img title="Titulo del producto" class="card-img-top" src="<?php echo $producto['imagen']; ?>"
+            <img title="<?php echo $producto['nombre'] ?>" class="card-img-top" src="<?php echo $producto['imagen']; ?>"
                 data-toggle="popover" data-trigger="hover" data-content="<?php echo $producto['descripcion']; ?>">
-            <div class="card-body">
+            <div class="card-body text-center">
                 <span><?php echo $producto['nombre']; ?></span>
                 <h5 class="card-title"><?php echo $producto['precio']; ?></h5>
-                <p class="card-text">Descripcion</p>
                 <form action="" method="post">
                     <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['id'], COD, KEY); ?>">
                     <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($producto['nombre'], COD, KEY); ?>">
@@ -34,8 +33,9 @@
                     <button class="btn btn-primary" type="submit" name="btnAccion" value="Agregar">Agregar al carrito</button>
                 </form>   
             </div>
-        </div>
+        </div><br>
     </div>
+   
     <?php 
         } 
     ?>

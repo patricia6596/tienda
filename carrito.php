@@ -43,7 +43,6 @@
                 }else{
                     $idProductos = array_column($_SESSION['CARRITO'],"ID");
                     if(in_array($ID, $idProductos)){
-                        echo "<script>alert('El producto ya ha sido seleccionado..');</script>";
                         $mensaje = "Producto agregado al carrito";
                     }else{
                         $NumeroProductos=count($_SESSION['CARRITO']);
@@ -65,7 +64,6 @@
                     foreach ( $_SESSION['CARRITO'] as $indice => $producto ) {
                         if( $producto['ID'] == $ID) {
                             unset($_SESSION['CARRITO'][$indice]);
-                            echo "<script>alert('Elemento borrado..');</script>";
                         }else
                             echo "hubo un error";
                     }
@@ -73,6 +71,7 @@
                     $mensaje="Upss.. ID incorrecto"."<br>";
                 }
             break;
+           
         }
     }
 ?>

@@ -1,0 +1,19 @@
+.altura {
+    height: 310px;
+}
+.mibg{
+    background-color:#D0D0D0;
+}
+.mimg {
+    margin-top: 70px;
+}
+.mitamaño{
+    width: 10%;
+}
+.miborde {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.oculto {
+	display: none;
+}  

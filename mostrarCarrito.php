@@ -8,19 +8,19 @@
 <table class="table table-light table-bordered">
     <tbody>
         <tr>
-            <th width="40%">Descripcion</th>
+            <th width="40%" class="text-center">Descripcion</th>
             <th width="15%" class="text-center">Cantidad</th>
             <th width="20%" class="text-center">Precio</th>
             <th width="20%" class="text-center">Total</th>
-            <th width="5%">--</th>
+            <th width="5%"></th>
         </tr>
         <?php $total=0; ?>
         <?php foreach($_SESSION['CARRITO'] as $indice=>$producto){?>
         <tr>
-            <td width="40%"><?php echo $producto['NOMBRE']; ?></td>
+            <td width="40%" class="text-center"><?php echo $producto['NOMBRE']; ?></td>
             <td width="15%" class="text-center"><?php echo $producto['CANTIDAD']; ?></td>
-            <td width="20%" class="text-center"><?php echo number_format($producto['CANTIDAD'],2); ?></td>
-            <td width="20%" class="text-center">200</td>
+            <td width="20%" class="text-center"><?php echo $producto['PRECIO']; ?></td>
+            <td width="20%" class="text-center"><?php echo number_format($producto['PRECIO']*$producto['CANTIDAD'],2); ?></td>
             <td>
                 <form action="" method="post">
                     <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['ID'], COD, KEY); ?>">
