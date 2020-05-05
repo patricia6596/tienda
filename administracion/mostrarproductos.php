@@ -42,6 +42,7 @@
                 </body>
             </table>
             <a class="btn btn-primary" href="introducir.php">Agregar producto</a>
+            <a class="btn btn-primary" href="../index.php">Salir</a>
         </div>
         
     </body>

@@ -1,10 +1,10 @@
-<br>
+
 <?php
     include 'templates/cabecera.php';
+    if(!empty($_SESSION['CARRITO'])) {
 ?>
 <br>
 <h3>Lista del carrito</h3>
-<?php if(!empty($_SESSION['CARRITO'])) {?>
 <table class="table table-light table-bordered">
     <tbody>
         <tr>

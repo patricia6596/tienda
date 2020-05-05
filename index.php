@@ -1,8 +1,8 @@
 <?php 
     include 'templates/cabecera.php';
+    if($mensaje!='') { 
 ?>
 <br>
-<?php if($mensaje!='') { ?>
 <div class="alert alert-success">
     <?php echo $mensaje; ?>
     <a href="mostrarCarrito.php" class="badge">Ver carrito</a>
