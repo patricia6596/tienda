@@ -31,7 +31,7 @@
                 }
                 return $listaProductos;
             }
-
+ 
             public function eliminar($id){
                 $db=Db::conectar();
                 $eliminar=$db->prepare('delete from productos where id=:id');

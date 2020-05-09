@@ -14,7 +14,7 @@
         <div class="container">
             <div class="">
                 <h2>Introduzca los datos del nuevo producto</h2>
-                <form action="administrar.php" method="post">
+                <form action="imagen.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nombre:</label>
                         <input type="text" class="form-control" name="nombreproducto">
@@ -28,12 +28,12 @@
                         <input type="decimal" class="form-control" name="precioproducto">
                     </div>
                     <div class="form-group">
-                        <label>Imagen:</label><br>
+                        <label for="imagen">Imagen:</label><br>
                         <input type="file" name="imagenproducto">
                     </div>
                     <button class="btn btn-primary" type="submit" name="insertar" value="insertar">Agregar producto</button>
-                    <a class="btn btn-primary" href="mostrarproductos.php">Editar productos</a>
-                </form>
+                </form><br>
+                <a class="btn btn-primary" href="mostrarproductos.php">Editar productos</a>
             </div>
            <div class="fixed-bottom"> 
                 <div class="row mibg justify-content-center p-1">
