@@ -4,12 +4,18 @@
 	require 'usuario.php';
 	include 'functionformulario.php';
 
+	/*Este fichero se encarga de realizar el registro de nuevos usuarios comprobando los datos recibido, iniciar sesion para usuarios,
+	iniciar sesion para administrador y cerrar sesion */
+
 	$accion = new Funciones(); 
 	$usuario = new Usuario();
 
 	if( isset( $_POST['registrar'] ) ) {
 
-		if( validatename( $_POST['nombre'] ) && validatename( $_POST['apellidos'] ) && validatepwd( $_POST['contr'] ) && validateemail( $_POST['email'] ) && validatedni( $_POST['dni'] ) && validatetlf( $_POST['telefono'] ) && validatedirec( $_POST['direccion'] ) && validatename( $_POST['localidad'] ) && validatecp( $_POST['codigopostal'] ) && validatename( $_POST['provincia'] ) && validatename( $_POST['pais'] ) ) {
+		if( validatename( $_POST['nombre'] ) && validatename( $_POST['apellidos'] ) && validatepwd( $_POST['contr'] ) && 
+		validateemail( $_POST['email'] ) && validatedni( $_POST['dni'] ) && validatetlf( $_POST['telefono'] ) && 
+		validatedirec( $_POST['direccion'] ) && validatename( $_POST['localidad'] ) && validatecp( $_POST['codigopostal'] ) 
+		&& validatename( $_POST['provincia'] ) && validatename( $_POST['pais'] ) ) {
 
 			$DNI=$_POST['dni'];
 			$letra = letradni( $DNI );

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<!--Este es el fichero cabecera, donde se declara el menu -->
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tienda</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="styles/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -12,14 +14,15 @@
     </head>
     <body>
         <?php
-            include 'global/config.php';
-            include 'carrito.php';
-            include 'global/conexion.php';
+            include_once 'global/config.php';
+            include_once 'carrito.php';
+            include_once 'global/conexion.php';
         ?>
         <div class="container">
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top mibg">
                 <div class="container-fluid">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,7 +31,8 @@
                             	<a class="nav-link text-dark font-weight-bold" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                            	<a class="nav-link text-dark font-weight-bold" href="mostrarCarrito.php">Carrito(<?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);?>)</a>
+                                <a class="nav-link text-dark font-weight-bold" href="mostrarCarrito.php">Carrito(<?php echo
+                                 (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);?>)</a>
 							</li>
                        	</ul>
                     </div>
@@ -108,15 +112,18 @@
 							<form method="post" action="global/accion.php" class="form">
                                 <div class="form-group">
                                     <label>Nombre:</label>
-                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras" name="nombre">
+                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras"
+                                     name="nombre">
                                 </div>
                                 <div class="form-group">
                                     <label>Apellidos:</label>
-                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras" name="apellidos">
+                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras"
+                                     name="apellidos">
                                 </div>
                                 <div class="form-group">
                                     <label>Contraseña:</label>
-                                    <input type="text" class="form-control" placeholder="Cuatro minusculas, una mayuscula y tres numeros" name="contr">
+                                    <input type="text" class="form-control" placeholder="Cuatro minusculas, una mayuscula y tres numeros"
+                                     name="contr">
                                 </div>
                                 <div class="form-group">
                                     <label>Email:</label>
@@ -153,7 +160,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Localidad:</label>
-                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras" name="localidad">
+                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras"
+                                     name="localidad">
                                 </div>
                                 <div class="form-group">
                                     <label>Codigo Postal</label>
@@ -161,11 +169,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Provincia</label>
-                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras" name="provincia">
+                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras"
+                                     name="provincia">
                                 </div>
                                 <div class="form-group">
                                     <label>Pais:</label>
-                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras" name="pais">
+                                    <input type="text" class="form-control" placeholder="Debe empezar por mayuscula y ser solo letras"
+                                    
+                                    name="pais">
                                 </div>
 						</div>
 						<div class="modal-footer">

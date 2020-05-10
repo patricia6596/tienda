@@ -1,5 +1,6 @@
 <?php
-	class  Db{
+	/*Este fichero crea la clase Db que se encarga de realizar la conexion a la base de datos */
+	class Db{
 		private static $conexion = NULL; 
 		private function __construct() {}
  

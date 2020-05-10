@@ -1,4 +1,7 @@
 <?php
+
+    /*En este fichero se define la clase producto con sus variables y sus funciones */
+
 	class Producto  {
         private $idproducto;
         private $nombreproducto;

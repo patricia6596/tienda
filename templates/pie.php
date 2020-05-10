@@ -1,4 +1,5 @@
 		</div>
+		<!--Este es el fichero pie, en el se define el pie de pagina -->
 		<br>
 		<div class="row mibg justify-content-center p-1">
 			<div class="col-6 w-100">

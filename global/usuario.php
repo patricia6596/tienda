@@ -1,4 +1,7 @@
 <?php
+
+	/*En este fichero se crea la clase usuario con todas sus variables y funciones */
+
 	class Usuario  {
 		private $nombre;
 		private $apellidos;

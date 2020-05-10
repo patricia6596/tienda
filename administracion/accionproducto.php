@@ -1,9 +1,10 @@
 <?php
         require_once('../global/conexion.php');
- 
+        /*En este script se define la clase CrudProducto y dentro de esta se encuentran las funciones insertar, modificar, eliminar,
+        obtener producto y actualizar*/
         class CrudProducto{
             public function __construct(){}
-     
+            /*La funcion  insertar, inserta en la tabla productos los productos que el administrador quiera añadir*/
             public function insertar($producto){
                 $db=Db::conectar();
                 $insert=$db->prepare( 'insert into productos (nombre, descripcion, precio, imagen) values (:nom, :desc, :precio, :img)' );
@@ -14,7 +15,7 @@
                 $insert->execute();
                
             }
-     
+            /* La funcion mostrar, selecciona los elementos de la tabla productos*/
             public function mostrar(){
                 $db=Db::conectar();
                 $listaProductos=[];
@@ -31,7 +32,7 @@
                 }
                 return $listaProductos;
             }
- 
+            /*La funcion eliminar, borra un elemento de la tabla productos */
             public function eliminar($id){
                 $db=Db::conectar();
                 $eliminar=$db->prepare('delete from productos where id=:id');
@@ -39,7 +40,7 @@
                 $eliminar->execute();
             }
      
-            // método para buscar un libro, recibe como parámetro el id del libro
+            /*La funcion obtenerProducto selecciona el elemento de la tabla productos que tiene el id recibido */
             public function obtenerProducto($id){
                 $db=Db::conectar();
                 $select=$db->prepare('select * from productos where id=:id');
@@ -55,7 +56,7 @@
                 return $myProducto;
             }
      
-            // método para actualizar un libro, recibe como parámetro el libro
+            /*La funcion actualizar, modifica el elemento de la tabla productos con el id recibido */
             public function actualizar($producto){
                 $db=Db::conectar();
                 $actualizar=$db->prepare('update productos set nombre=:nom, descripcion=:desc, precio=:precio, imagen=:img  where id=:id');

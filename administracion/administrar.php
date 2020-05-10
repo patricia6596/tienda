@@ -1,6 +1,7 @@
 <?php
     require_once('accionproducto.php');
     require_once('../global/producto.php');
+    /*Este fichero recibe de formularios y procede a ejecutar la correspondiente funcion */
     $crud=new CrudProducto();
     $producto= new Producto();
     $listaProductos=$crud->mostrar();

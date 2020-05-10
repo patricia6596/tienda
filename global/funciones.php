@@ -1,6 +1,8 @@
 <?php
 	require 'conexion.php';
 
+	/*Este fichero realiza las acciones de registro e iniciar usando las tablas de la base de datos */
+
 	class Funciones {
 
 		public function __construct(){}
@@ -8,7 +10,9 @@
 		public function registrar( $usuario ) {
  
 			$db = Db::conectar();
-			$insert = $db -> prepare( 'insert into cliente (nombre, apellidos, contr, email, f_nacimiento, dni, estado_civil, telefono, direccion, numero, localidad, codigo_postal, provincia, pais) values (:nombre, :apellidos, :contr, :email, :f_nacimiento, :dni, :estado_civil, :telefono, :direccion, :numero, :localidad, :codigo_postal, :provincia, :pais)' );
+			$insert = $db -> prepare( 'insert into cliente (nombre, apellidos, contr, email, f_nacimiento, dni, estado_civil, telefono, 
+			direccion, numero, localidad, codigo_postal, provincia, pais) values (:nombre, :apellidos, :contr, :email, :f_nacimiento, :dni, 
+			:estado_civil, :telefono, :direccion, :numero, :localidad, :codigo_postal, :provincia, :pais)' );
 			$insert -> bindValue( 'nombre', $usuario -> getNombre() );
 			$insert -> bindValue( 'apellidos', $usuario -> getApellidos() );
 			$insert -> bindValue( 'contr', $usuario -> getContr() );

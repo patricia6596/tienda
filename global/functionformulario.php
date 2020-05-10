@@ -1,5 +1,7 @@
 <?php
 
+	/* Este fichero contiene las funciones que se encargan de validar los datos usando expresiones regulares */
+
 	function validatename($x){
 		if(isset($x) && preg_match("/\b([A-Z])([a-z]+)/", $x))
 			return true;

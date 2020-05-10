@@ -2,6 +2,9 @@
     include 'templates/cabecera.php';
     if($mensaje!='') { 
 ?>
+
+<!--Este archivo es la pantalla principal del proyecto, hace una seleccion de la tabla productos y los muestra -->
+
 <br>
 <div class="alert alert-success">
     <?php echo $mensaje; ?>
