@@ -44,8 +44,6 @@
 			$select -> bindvalue( ':con', $con );
 			$select -> execute();
 
-			$accion = new Funciones();
-
  			$numero_registro = $select -> rowcount();
 
 			if($numero_registro==0) {
@@ -53,7 +51,9 @@
 				echo 'Este usuario no esta registrado';
 			
 			}else {
-
+				session_start();
+				$_SESSION['user']=$nom;
+				header('Location: ../index.php');
 					
 			}	
 		}

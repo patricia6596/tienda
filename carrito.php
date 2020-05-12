@@ -9,6 +9,7 @@
     if(isset($_POST['btnAccion'])){
         switch ($_POST['btnAccion']) {
             case 'Agregar':
+                
                 if( is_numeric( openssl_decrypt ( $_POST['id'], COD, KEY ) ) ) {
                     $ID = ( openssl_decrypt( $_POST['id'], COD, KEY ) ) ;
                     $db = Db::conectar();
@@ -65,7 +66,7 @@
                         $update -> bindValue( 'ID', $ID);
                         $update -> bindValue( 'cantidad', $CANTI+1);
                         $update -> execute();
-                        $mensaje = "Producto agregado al carrito";
+                        $mensaje = "Producto agregado al carrito por ".($CANTI+1)." veces";
                     }else{
                         $NumeroProductos=count($_SESSION['CARRITO']);
                         $producto=array(
@@ -88,8 +89,8 @@
                 
             break;
             case "Eliminar":
-                if(is_numeric( openssl_decrypt( $_POST['id'], COD, KEY ) ) ) {
-                    $ID = ( openssl_decrypt( $_POST['id'], COD, KEY ) ) ;
+                if(is_numeric( $_POST['id']) ) {
+                    $ID = $_POST['id'] ;
                     foreach ( $_SESSION['CARRITO'] as $indice => $producto ) {
                         if( $producto['ID'] == $ID) {
                             $db = Db::conectar();
@@ -97,8 +98,10 @@
                             $delete = $db -> prepare( 'delete from linea_pedido where codigo_productos = :codigo;' );
                             $delete -> bindValue( 'codigo', $ID);
                             $delete -> execute();
-                        }else
+                            header('Location: mostrarCarrito.php');
+                        }else {
                             echo "hubo un error";
+                        }
                     }
                 }else{
                     $mensaje="Upss.. ID incorrecto"."<br>";

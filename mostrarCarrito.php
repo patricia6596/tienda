@@ -32,7 +32,7 @@
             <td width="20%" class="text-center"><?php echo number_format($producto['precio']*$producto['cantidad'],2); ?></td>
             <td>
                 <form action="" method="post">
-                    <input type="hidden" name="id" id="id" value="<?php echo $producto['id'], COD, KEY; ?>">
+                    <input type="hidden" name="id" id="id" value="<?php echo $producto['id']; ?>">
                     <button class="btn btn-primary" type="submit" name="btnAccion" value="Eliminar">Eliminar</button>
                 </form>
             </td>

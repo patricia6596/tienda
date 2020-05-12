@@ -23,24 +23,24 @@
         <br>
         <div class="container">
             <form action='administrar.php' method='post'>
-                <table>
+                <table class="table table-bordered">
                     <tr>
-                        <input type='hidden' name='id' value='<?php echo $producto->getId()?>'>
-                        <td>Nombre producto:</td>
-                        <td> <input type='text' name='nombre' value='<?php echo $producto->getNombre()?>'></td>
+                        <input type='hidden' name='id' class="form-control" value='<?php echo $producto->getId()?>'>
+                        <td width="50%" >Nombre producto:</td>
+                        <td width="50%" > <input type='text' name='nombre' class="form-control" value='<?php echo $producto->getNombre()?>'></td>
                     </tr>
                     <tr>
-                        <td>Descripcion:</td>
-                        <td><textarea name='descripcion'><?php echo $producto->getDescripcion()?></textarea></td>
+                        <td width="50%">Descripcion:</td>
+                        <td width="50%"><textarea name='descripcion' class="form-control"><?php echo $producto->getDescripcion()?></textarea></td>
                     </tr>
                     <tr>
-                        <td>Precio:</td>
-                        <td><input type='text' name='precio' value='<?php echo $producto->getPrecio() ?>'></td>
+                        <td width="50%">Precio:</td>
+                        <td width="50%"><input type='text' name='precio' class="form-control" value='<?php echo $producto->getPrecio() ?>'></td>
                     </tr>
                     <input type='hidden' name='imagen' value='<?php echo $producto->getImagen()?>'>
                     <input type='hidden' name='actualizar' value='actualizar'>
                 </table>
-                <input type='submit' value='Guardar'>
+                <button type="submit" class="btn btn-primary" value='Guardar'>Guardar</button>
             </form>
         </div>
     </body>

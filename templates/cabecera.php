@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tienda</title>
+        <title>MiTienda</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
         integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="styles/style.css">
@@ -36,6 +36,19 @@
 							</li>
                        	</ul>
                     </div>
+                    <?php
+                        if(isset($_SESSION['user'])){
+                    ?>
+                        <li><?php echo "Bienvenido ".$_SESSION['user']." " ?></li>
+                        <form method="post" action="global/accion.php">
+                            <li>
+                                <button type="submit" class="btn btn-dark" name='cerrarsesion' value='cerrarsesion'>Cerrar sesión</button>
+                            </li>
+                        </form>
+                        
+                    <?php
+                       }else{
+                    ?>
                     <ul class="nav justify-content-end">
                         <li>
                             <button type="button" class="btn btn-dark m-1" data-toggle="modal" data-target="#admin">Administracion</button>
@@ -47,8 +60,10 @@
                             <button type="button" class="btn btn-dark m-1" data-toggle="modal" data-target="#registro">Registro</button>
                         </li>
                     </ul>
+                    <?php } ?>
                 </div>
 			</nav>
+                       
             <br>
             <br>
             <div class="modal" id="admin"> 
@@ -122,7 +137,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Contraseña:</label>
-                                    <input type="text" class="form-control" placeholder="Cuatro minusculas, una mayuscula y tres numeros"
+                                    <input type="password" class="form-control" placeholder="Cuatro minusculas, una mayuscula y tres numeros"
                                      name="contr">
                                 </div>
                                 <div class="form-group">

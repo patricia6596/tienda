@@ -21,23 +21,24 @@
     </head>
     <body>
         <div class="container">
-            <h3>Edicion de productos</h3>
-            <table>
+            <h3 class="pt-3 text-center text-uppercase">Edicion de productos</h3>
+            <br>
+            <table class="table table-light table-bordered">
                 <head>
-                    <td>Nombre</td>
-                    <td>Descripcion</td>
-                    <td>Precio</td>
-                    <td>Actualizar</td>
-                    <td>Eliminar</td>
+                    <td width="30%" class="text-center font-weight-bold">Nombre</td>
+                    <td width="60%" class="text-center font-weight-bold">Descripcion</td>
+                    <td width="30%" class="text-center font-weight-bold">Precio</td>
+                    <td width="40%" class="text-center font-weight-bold"></td>
+                    <td width="40%" class="text-center font-weight-bold"></td>
                 </head>
                 <body>
                     <?php foreach ($listaProductos as $producto) {?>
                     <tr>
-                        <td><?php echo $producto->getNombre() ?></td>
-                        <td><?php echo $producto->getDescripcion() ?></td>
-                        <td><?php echo $producto->getPrecio()?> </td>
-                        <td><a href="actualizar.php?id=<?php echo $producto->getId()?>&accion=a">Actualizar</a> </td>
-                        <td><a href="administrar.php?id=<?php echo $producto->getId()?>&accion=e">Eliminar</a>   </td>
+                        <td width="30%" class="text-center"><?php echo $producto->getNombre() ?></td>
+                        <td width="60%" class="text-center"><?php echo $producto->getDescripcion() ?></td>
+                        <td width="30%" class="text-center"><?php echo $producto->getPrecio()?> </td>
+                        <td width="40%" class="text-center"><a href="actualizar.php?id=<?php echo $producto->getId()?>&accion=a">Actualizar</a> </td>
+                        <td width="40%" class="text-center"><a href="administrar.php?id=<?php echo $producto->getId()?>&accion=e">Eliminar</a>   </td>
                     </tr>
                     <?php }?>
                 </body>
